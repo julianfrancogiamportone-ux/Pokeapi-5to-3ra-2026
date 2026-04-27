@@ -55,4 +55,11 @@ public class Ataque{
         this.danioBase = danioBase;
     }
 
+    public void imprimir(){
+        System.out.println("nombre: " + nombre);
+        System.out.println("costo de energia: " + costoEnergia);
+        System.out.println("daño base " + danioBase);
+    }
+
+
 }
