@@ -95,4 +95,11 @@ public class Peleador {
         this.ataques = ataques;
     }
 
+    public void imprimir(){
+        System.out.println("Peleador: " + nombre);
+        System.out.println("Puntos de Vida: " + puntosVida);
+        System.out.println("Energía: " + energia);
+        System.out.println("Defensa Base: " + defensaBase);
+        System.out.println("Armas:");
+    }
 }
