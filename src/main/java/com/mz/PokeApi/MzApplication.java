@@ -3,6 +3,7 @@ package com.mz.PokeApi;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import com.mz.PokeApi.entidades.Arma;
 
 @SpringBootApplication
 public class MzApplication {
