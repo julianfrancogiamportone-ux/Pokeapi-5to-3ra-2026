@@ -44,5 +44,9 @@ public class Arma{
     public void setPeso(float peso) {
         this.peso = peso;
     }
+    public void imprimir(){
+        System.out.println("Arma: " + nombre);
+        System.out.println("Bonificación de daño: " + Bonificadordano);
+        System.out.println("Peso: " + peso);
     
 }
