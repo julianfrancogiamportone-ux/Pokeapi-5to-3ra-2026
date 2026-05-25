@@ -22,7 +22,7 @@ public class Peleador {
     private List<Arma> armas;
 
     @ManyToMany
-    
+
     @JoinTable(name = "peleador_ataques", joinColumns = @JoinColumn(name = "peleador_id"), inverseJoinColumns = @JoinColumn(name = "ataque_id"))
 
     private List<Ataque> ataques;
@@ -78,28 +78,40 @@ public class Peleador {
         this.defensaBase = defensaBase;
     }
 
-  
     public ArrayList<Arma> getarmas() {
         return (ArrayList<Arma>) armas;
     }
 
-    public void setarmas(ArrayList<Arma> armas) {
+    public List<Arma> getArmas() {
+        return armas;
+    }
+
+    public void setArmas(List<Arma> armas) {
         this.armas = armas;
     }
 
-    public ArrayList<Ataque> getataques() {
-        return (ArrayList<Ataque>) ataques;
+    public List<Ataque> getAtaques() {
+        return ataques;
+    }
+
+    public void setAtaques(List<Ataque> ataques) {
+        this.ataques = ataques;
     }
 
     public void setataques(ArrayList<Ataque> ataques) {
         this.ataques = ataques;
     }
 
-    public void imprimir(){
+    public void imprimir() {
         System.out.println("Peleador: " + nombre);
         System.out.println("Puntos de Vida: " + puntosVida);
         System.out.println("Energía: " + energia);
         System.out.println("Defensa Base: " + defensaBase);
         System.out.println("Armas:");
+    }
+
+    public void imprimirvida() {
+        System.out.println("Nombre: " + nombre);
+        System.out.println("Puntos de Vida: " + puntosVida);
     }
 }
