@@ -51,21 +51,20 @@ public class MzApplication {
 
 		Ataque Boladefuego = new Ataque(1L, "bola de fuego", 15, 20);
 		Ataque Rayo = new Ataque(2L, "rayo", 20, 30);
-		Ataque Semilla = new Ataque(3L, "semilla", 10, 10);
+		Ataque Semilla = new Ataque(3L, "semilla", 10, 15);
 
-		List<Ataque> att = new ArrayList<>();
+		System.out.println(Pikachu.getNombre() + " tiene " + Pikachu.getPuntosVida() + " puntos de vida");
+		System.out.println(Charmander.getNombre() + " tiene " + Charmander.getPuntosVida() + " puntos de vida");
 
-		Pikachu.setAtaques(att);
-		Charmander.setAtaques(att);
+		Pikachu.setAtaques(new ArrayList<>());
+		Charmander.setAtaques(new ArrayList<>());
 
-		Pikachu.setArmas(new ArrayList<>(List.of(Carbon)));
-
+		Pikachu.setArmas(new ArrayList<>(List.of(Bandaresistencia)));
 		Charmander.setArmas(new ArrayList<>(List.of(Carbon)));
 
 		if (Pikachu.getArmas().get(0).getBonificadordano() > Charmander.getArmas().get(0).getBonificadordano()) {
 			System.out.println("Pikachu tiene un arma mas fuerte");
-		}
-		if (Pikachu.getArmas().get(0).getBonificadordano() < Charmander.getArmas().get(0).getBonificadordano()) {
+		} else if (Pikachu.getArmas().get(0).getBonificadordano() < Charmander.getArmas().get(0).getBonificadordano()) {
 			System.out.println("Charmander tiene un arma mas fuerte");
 		} else {
 			System.out.println("Los peleadores tienen un arma igual de fuerte");
@@ -80,14 +79,15 @@ public class MzApplication {
 
 		for (Arma a : armas) {
 			Pikachu.getArmas().add(a);
+			Charmander.getArmas().add(a);
 		}
 
-		List<Ataque> ataques = new ArrayList<>();
-		ataques.add(Boladefuego);
-		ataques.add(Rayo);
-		ataques.add(Semilla);
+		List<Ataque> ataquesTotales = new ArrayList<>();
+		ataquesTotales.add(Boladefuego);
+		ataquesTotales.add(Rayo);
+		ataquesTotales.add(Semilla);
 
-		for (Ataque a : ataques) {
+		for (Ataque a : ataquesTotales) {
 			Pikachu.getAtaques().add(a);
 			Charmander.getAtaques().add(a);
 		}
@@ -109,16 +109,21 @@ public class MzApplication {
 			contg++;
 		}
 		float promedio = engcost / contg;
-		System.out.println("El promedio de costo de energia de los ataques es: " + promedio);
+		if (promedio >= 50.0f) {
+			System.out.println("El promedio de costo de energia de los ataques de Pikachu es mayor a 50");
+		} else {
+			System.out.println("El promedio de costo de energia de los ataques de Pikachu es menor a 50");
+		}
 
 		for (Ataque a : Pikachu.getAtaques()) {
 			if (a.getCostoEnergia() <= Pikachu.getEnergia()) {
 				System.out.println(a.getNombre());
 			}
 		}
+
 		descanso(Pikachu);
 		descanso(Charmander);
-		while (Charmander.getPuntosVida() <= 0 || Pikachu.getPuntosVida() <= 0) {
+		while (Charmander.getPuntosVida() > 0 && Pikachu.getPuntosVida() > 0) {
 			golpear(Pikachu, Charmander, Pikachu.getAtaques().get(0));
 			golpear(Charmander, Pikachu, Charmander.getAtaques().get(0));
 		}
