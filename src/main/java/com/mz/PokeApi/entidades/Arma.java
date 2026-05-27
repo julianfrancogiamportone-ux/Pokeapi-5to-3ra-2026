@@ -49,4 +49,5 @@ public class Arma{
         System.out.println("Bonificación de daño: " + Bonificadordano);
         System.out.println("Peso: " + peso);
     
+    }
 }
