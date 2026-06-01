@@ -77,24 +77,23 @@ public class Peleador {
     public void setDefensaBase(float defensaBase) {
         this.defensaBase = defensaBase;
     }
+    
 
-  
-    public ArrayList<Arma> getarmas() {
-        return (ArrayList<Arma>) armas;
+    public List<Arma> getArmas() {
+        return armas;
     }
 
-    public void setarmas(ArrayList<Arma> armas) {
+    public void setArmas(List<Arma> armas) {
         this.armas = armas;
     }
-
-    public ArrayList<Ataque> getataques() {
-        return (ArrayList<Ataque>) ataques;
+    
+     public List<Ataque> getAtaques() {
+        return ataques;
     }
 
-    public void setataques(ArrayList<Ataque> ataques) {
+    public void setAtaques(List<Ataque> ataques) {
         this.ataques = ataques;
     }
-
     public void imprimir(){
         System.out.println("Peleador: " + nombre);
         System.out.println("Puntos de Vida: " + puntosVida);
@@ -102,4 +101,6 @@ public class Peleador {
         System.out.println("Defensa Base: " + defensaBase);
         System.out.println("Armas:");
     }
+
+   
 }
