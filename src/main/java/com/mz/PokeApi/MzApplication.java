@@ -13,9 +13,6 @@ public class MzApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(MzApplication.class, args);
 
-
-
 	}
-
 
 }

@@ -1,5 +1,7 @@
 package com.mz.PokeApi.Repository;
 
-public interface PeleadorRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
+import com.mz.PokeApi.entidades.Peleador;
 
+public interface PeleadorRepository extends JpaRepository<Peleador, Long> {
 }
