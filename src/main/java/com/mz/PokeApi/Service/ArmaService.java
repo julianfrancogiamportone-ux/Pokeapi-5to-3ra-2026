@@ -9,10 +9,10 @@ import com.mz.PokeApi.Repository.ArmaRepository;
 public class ArmaService implements ArmaIService{
     @Autowired
     private ArmaRepository aRepository;
-    public List<Arma> findAllCharacters() {
+    public List<Arma> findAllArmas() {
         return aRepository.findAll();
     }
-    public Arma saveCharacter(Arma arma) {
+    public Arma saveArma(Arma arma) {
         return aRepository.save(arma);
 }
 }
