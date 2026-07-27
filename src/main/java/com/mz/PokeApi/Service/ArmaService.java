@@ -6,6 +6,8 @@ import com.mz.PokeApi.IService.ArmaIService;
 import com.mz.PokeApi.entidades.Arma;
 import com.mz.PokeApi.Repository.ArmaRepository;
 
+@Service 
+
 public class ArmaService implements ArmaIService{
     @Autowired
     private ArmaRepository aRepository;

@@ -19,14 +19,14 @@ async function fetchData() {
 loadPeleadores();
 }
 
-function loadPeleadores() {[...characters, ...ninjas].forEach(Peleador => {
+function loadPeleadores() {[...characters].forEach(Peleador => {
     const option1 = document.createElement('option');
     option1.value = JSON.stringify(Peleador);
-    option1.text = `${Peleador.nombre} (${Peleador.Arma || Peleador.Ataque})`;
+    option1.text = `${Peleador.nombre} (${Peleador.armas[(Math.floor(Math.random() * 2) + 0)].nombre || Peleador.ataques[(Math.floor(Math.random() * 2) + 0)].nombre})`;
     Peleador1Select.appendChild(option1);
     const option2 = document.createElement('option');
     option2.value = JSON.stringify(Peleador);
-    option2.text = `${Peleador.nombre} (${Peleador.raza || Peleador.aldea})`;
+    option2.text = `${Peleador.nombre} (${Peleador.armas[(Math.floor(Math.random() * 2) + 0)].nombre || Peleador.ataques[(Math.floor(Math.random() * 2) + 0)].nombre})`;
     Peleador2Select.appendChild(option2);
 });
 const selected = JSON.parse(Peleador1Select.value);
@@ -54,8 +54,8 @@ fightButton.addEventListener('click', () => {
     return;
 }
 
-const power1 = fighter1.nivelDePoder || (Math.floor(Math.random() * 1000) + 500);
-const power2 = fighter2.nivelDePoder || (Math.floor(Math.random() * 1000) + 500);
+const power1 = fighter1.puntosVida || (Math.floor(Math.random() * 1000) + 500);
+const power2 = fighter2.puntosVida|| (Math.floor(Math.random() * 1000) + 500);
 let winner;
 if (power1 > power2) {
     winner = fighter1.nombre;

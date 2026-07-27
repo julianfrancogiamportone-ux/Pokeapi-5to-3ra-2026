@@ -23,6 +23,8 @@ public class Ataque{
         this.danioBase = danioBase;
     }
 
+    public Ataque() {
+    }
     public long getId() {
         return id;
     }
