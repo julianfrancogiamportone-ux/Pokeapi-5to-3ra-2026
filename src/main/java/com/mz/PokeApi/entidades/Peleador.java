@@ -38,6 +38,9 @@ public class Peleador {
         this.ataques = ataques;
     }
 
+    public Peleador() {
+    }
+
     public Long getId() {
         return id;
     }
