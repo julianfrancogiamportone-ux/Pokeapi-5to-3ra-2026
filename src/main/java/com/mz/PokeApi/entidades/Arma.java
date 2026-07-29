@@ -20,6 +20,9 @@ public class Arma{
         this.peso = peso;
     }
     
+    public Arma() {
+    }
+
     public long getId() {
         return id;
     }

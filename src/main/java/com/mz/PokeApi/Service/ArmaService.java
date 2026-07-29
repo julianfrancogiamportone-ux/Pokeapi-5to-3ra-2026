@@ -6,13 +6,15 @@ import com.mz.PokeApi.IService.ArmaIService;
 import com.mz.PokeApi.entidades.Arma;
 import com.mz.PokeApi.Repository.ArmaRepository;
 
+@Service 
+
 public class ArmaService implements ArmaIService{
     @Autowired
     private ArmaRepository aRepository;
-    public List<Arma> findAllCharacters() {
+    public List<Arma> findAllArmas() {
         return aRepository.findAll();
     }
-    public Arma saveCharacter(Arma arma) {
+    public Arma saveArma(Arma arma) {
         return aRepository.save(arma);
 }
 }
