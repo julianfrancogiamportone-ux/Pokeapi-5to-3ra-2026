@@ -13,10 +13,10 @@ public class Arma{
     @ManyToMany(mappedBy = "armas")
     private List<Peleador> peleadores;
 
-    public Arma(long id, String nombre, int bonificadordano, float peso) {
+    public Arma(long id, String nombre, int Bonificadordano, float peso) {
         this.id = id;
         this.nombre = nombre;
-        Bonificadordano = bonificadordano;
+        this.Bonificadordano = Bonificadordano;
         this.peso = peso;
     }
     
@@ -38,18 +38,13 @@ public class Arma{
     public int getBonificadordano() {
         return Bonificadordano;
     }
-    public void setBonificadordano(int bonificadordano) {
-        Bonificadordano = bonificadordano;
+    public void setBonificadordano(int Bonificadordano) {
+        this.Bonificadordano = Bonificadordano;
     }
     public float getPeso() {
         return peso;
     }
     public void setPeso(float peso) {
         this.peso = peso;
-    }
-    public void imprimir(){
-        System.out.println("Arma: " + nombre);
-        System.out.println("Bonificación de daño: " + Bonificadordano);
-        System.out.println("Peso: " + peso);
     }
 }
