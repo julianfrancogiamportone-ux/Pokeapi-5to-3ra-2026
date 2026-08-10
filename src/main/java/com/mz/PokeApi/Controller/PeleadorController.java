@@ -9,7 +9,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import com.mz.PokeApi.IService.PeleadorIService;
 import com.mz.PokeApi.entidades.Peleador;
+import org.springframework.web.bind.annotation.CrossOrigin;
 
+@CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("/api/characters")
 
