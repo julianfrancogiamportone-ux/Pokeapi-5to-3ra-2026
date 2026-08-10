@@ -15,6 +15,7 @@ public class Peleador {
     private int puntosVida;
     private int energia;
     private float defensaBase;
+    private String imgurl;
 
     @ManyToMany
 
@@ -28,7 +29,7 @@ public class Peleador {
     private List<Ataque> ataques;
 
     public Peleador(Long id, String nombre, int puntosVida, int energia, float defensaBase, Arma armaEquipada,
-            List<Arma> armas, List<Ataque> ataques) {
+            List<Arma> armas, List<Ataque> ataques, String imgurl) {
         this.id = id;
         this.nombre = nombre;
         this.puntosVida = puntosVida;
@@ -36,6 +37,7 @@ public class Peleador {
         this.defensaBase = defensaBase;
         this.armas = armas;
         this.ataques = ataques;
+        this.imgurl = imgurl;
     }
 
     public Peleador() {
@@ -97,13 +99,12 @@ public class Peleador {
     public void setAtaques(List<Ataque> ataques) {
         this.ataques = ataques;
     }
-    public void imprimir(){
-        System.out.println("Peleador: " + nombre);
-        System.out.println("Puntos de Vida: " + puntosVida);
-        System.out.println("Energía: " + energia);
-        System.out.println("Defensa Base: " + defensaBase);
-        System.out.println("Armas:");
+
+    public String getImgurl() {
+        return imgurl;
     }
 
-   
+    public void setImgurl(String imgurl) {
+        this.imgurl = imgurl;
+    }   
 }
