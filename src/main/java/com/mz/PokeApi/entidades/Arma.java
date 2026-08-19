@@ -1,6 +1,8 @@
 package com.mz.PokeApi.entidades;
 import jakarta.persistence.*;
 import java.util.List;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 @Entity
 public class Arma{
     @Id
@@ -11,6 +13,7 @@ public class Arma{
     private float peso;
     
     @ManyToMany(mappedBy = "armas")
+    
     private List<Peleador> peleadores;
 
     public Arma(long id, String nombre, int Bonificadordano, float peso) {
