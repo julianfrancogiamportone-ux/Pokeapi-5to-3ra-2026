@@ -5,6 +5,8 @@ import jakarta.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 @Entity
 
 public class Peleador {
@@ -25,11 +27,10 @@ public class Peleador {
     @ManyToMany
     
     @JoinTable(name = "peleador_ataques", joinColumns = @JoinColumn(name = "peleador_id"), inverseJoinColumns = @JoinColumn(name = "ataque_id"))
-
     private List<Ataque> ataques;
 
     public Peleador(Long id, String nombre, int puntosVida, int energia, float defensaBase, Arma armaEquipada,
-            List<Arma> armas, List<Ataque> ataques, String imgurl) {
+        List<Arma> armas, List<Ataque> ataques, String imgurl) {
         this.id = id;
         this.nombre = nombre;
         this.puntosVida = puntosVida;
